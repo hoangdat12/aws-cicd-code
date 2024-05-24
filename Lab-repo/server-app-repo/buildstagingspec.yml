@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-version:
+      nodejs: 20
+  pre_build:
+    commands:
+      - npm install
+      - mv appspec-staging.yml appspec.yml
+artifacts:
+  files:
+    - '**/*'
+    - appspec.yml
+    - 'scripts/**/*'

@@ -1,0 +1,55 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:ap-southeast-1:918195417335:task-definition/client-app-definition:15",
+  "containerDefinitions": [
+    {
+      "name": "client-app",
+      "image": "<CLIENT_APP_IMAGE>",
+      "cpu": 256,
+      "memory": 512,
+      "portMappings": [
+        {
+          "containerPort": 5173,
+          "hostPort": 5173,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true,
+      "environment": [
+        {
+          "name": "VITE_APP_SERVER_URL",
+          "value": "http://172.31.32.193:5000"
+        }
+      ],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "systemControls": []
+    }
+  ],
+  "family": "client-app-definition",
+  "executionRoleArn": "arn:aws:iam::918195417335:role/ECS-execution-role",
+  "networkMode": "awsvpc",
+  "revision": 15,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": ["EC2", "FARGATE"],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "registeredAt": "2024-05-07T08:06:44.533Z",
+  "registeredBy": "arn:aws:iam::918195417335:user/hoangdat12"
+}
